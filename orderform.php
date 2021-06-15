@@ -71,8 +71,7 @@ $quan = $_POST['quantity'];
 						
 						// send email
 						$msg = "
-						Assalamu Alaikum...
-						Your Order successfull. Very soon we will send you a verification call.
+						Your order was successfully placed. Very soon we will send you a verification call.
 						
 						";
 						//if (@mail($uemail_db,"eBuyBD Product Order",$msg, "From:eBuyBD <no-reply@ebuybd.xyz>")) {
@@ -81,7 +80,7 @@ $quan = $_POST['quantity'];
 
 							//success message
 						$success_message = '
-						<div class="signupform_content"><h2><font face="bookman">Your order successfull!</font></h2>
+						<div class="signupform_content"><h2><font face="bookman">Your order was successful!</font></h2>
 						<div class="signupform_text" style="font-size: 18px; text-align: center;">
 						<font face="bookman">
 							We send you a verification <br> call very soon.
@@ -134,7 +133,7 @@ $quan = $_POST['quantity'];
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -190,7 +189,7 @@ $quan = $_POST['quantity'];
 									<div>
 										<td>
 											<select onchange="changeAmount()" name="quantity" required="required" id="productAmount" style=" font-size: 20px;
-										font-style: italic; margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">';
+										font-style: italic; margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">';
 
 					
 

@@ -15,7 +15,7 @@ else {
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Welcome to ebuybd online shop</title>
+		<title>The best e-commerce site</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -35,20 +35,10 @@ else {
 					 ?>
 					
 				</div>
-				<div class="uiloginbutton signinButton loginButton" style="">
-					<?php 
-						if ($user!="") {
-							echo '<a style="text-decoration: none; color: #fff;" href="profile.php?uid='.$user.'">Hi '.$uname_db.'</a>';
-						}
-						else {
-							echo '<a style="text-decoration: none; color: #fff;" href="login.php">LOG IN</a>';
-						}
-					 ?>
-				</div>
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -61,9 +51,10 @@ else {
 			</div>
 		</div>
 		<div class="home-welcome">
-			<div class="home-welcome-text" style="background-image: url(image/homebackgrndimg.png); height: 380px; ">
-				<h1 style="margin: 0px;">Welcome To eBuyBD</h1>
-				<h2>Largest Online Shopping In Bangladesh</h2>
+			<div class="home-welcome-text" style="background-image: url(image/photo.jpg);background-attachment: fixed; 
+				background-repeat:no-repeat; background-size: cover;
+			height: 380px; ">
+				<h1 style="margin: 0px; color: black;">Welcome To E-pasa</h1>
 			</div>
 		</div>
 		<div class="home-prodlist">

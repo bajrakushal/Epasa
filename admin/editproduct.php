@@ -21,8 +21,8 @@ else {
 
 }
 $getposts = mysqli_query($conn, "SELECT * FROM products WHERE id ='$epid'") or die(mysql_error());
-	if (mysql_num_rows($getposts)) {
-		$row = mysql_fetch_assoc($getposts);
+	if (mysqli_num_rows($getposts)) {
+		$row = mysqli_fetch_assoc($getposts);
 		$id = $row['id'];
 		$pName = $row['pName'];
 		$price = $row['price'];
@@ -157,7 +157,7 @@ $search_value = "";
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="../image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="../image/epasalogo.png">
 				</a>
 			</div>
 			<div id="srcheader">
@@ -177,7 +177,7 @@ $search_value = "";
 					</th>
 					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Add Product</a></th>
 					<th><a href="newadmin.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">New Admin</a></th>
-					<th><a href="allproducts.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">All Products</a></th>
+					<th><a href="allproducts.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">All Products</a></th>
 					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Orders</a></th>
 				</tr>
 			</table>
@@ -218,7 +218,7 @@ $search_value = "";
 									<div>
 										<td>
 											<select name="category" required="required" style=" font-size: 20px;
-										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 												<option selected value="'.$category.'">'.$categoryu.'</option>
 												<option value="women">Women</option>
 											</select>
@@ -226,7 +226,7 @@ $search_value = "";
 									</div>
 									<div>
 										<select name="type" required="required" style=" font-size: 20px;
-										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 											<option selected value="'.$type.'">'.$typeu.'</option>
 												<option value="clothing">Clothing</option>
 												<option value="other">Other</option>
@@ -235,7 +235,7 @@ $search_value = "";
 									<div>
 										<td>
 											<select name="item" required="required" style=" font-size: 20px;
-										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+										font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 												<option selected value="'.$item.'">'.$itemu.'</option>
 												<option value="saree">Saree</option>
 												<option value="ornament">Ornaments</option>

@@ -43,6 +43,10 @@ $getposts = mysqli_query($conn,"SELECT * FROM products WHERE id ='$pid'") or die
 <body>
 	<?php include ( "../inc/mainheader.inc.php" ); ?>
 	<div class="categolis">
+		<?php 
+		if(isset($_SESSION['user_login']))
+			{
+		?>
 		<table>
 			<tr>
 				<th>
@@ -57,6 +61,9 @@ $getposts = mysqli_query($conn,"SELECT * FROM products WHERE id ='$pid'") or die
 				<th><a href="toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Toilatry</a></th>
 			</tr>
 		</table>
+		<?php
+			}
+		?>
 	</div>
 	<div style="margin: 0 97px; padding: 10px">
 

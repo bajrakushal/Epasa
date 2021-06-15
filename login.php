@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
 		$result = mysqli_query($conn, "SELECT * FROM user WHERE (email='$user_login') AND password='$password_login_md5' AND activation='yes'");
 		$num = mysqli_num_rows($result);
 		$get_user_email = mysqli_fetch_assoc($result);
-			$get_user_uname_db = $get_user_email['id'];
+			@$get_user_uname_db = $get_user_email['id'];
 		if ($num>0) {
 			$_SESSION['user_login'] = $get_user_uname_db;
 			setcookie('user_login', $user_login, time() + (365 * 24 * 60 * 60), "/");
@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 			$result1 = mysqli_query($conn,"SELECT * FROM user WHERE (email='$user_login') AND password='$password_login_md5' AND activation='no'");
 		$num1 = mysqli_num_rows($result1);
 		$get_user_email1 = mysqli_fetch_assoc($result1);
-			$get_user_uname_db1 = $get_user_email1['id'];
+			@$get_user_uname_db1 = $get_user_email1['id'];
 		if ($num1>0) {
 			$emails = $user_login;
 			$activacc ='';
@@ -68,7 +68,7 @@ if(isset($_POST['activate'])){
 			$get_user_uname_db = $get_user_email['id'];
 			$_SESSION['user_login'] = $get_user_uname_db;
 			setcookie('user_login', $user_login, time() + (365 * 24 * 60 * 60), "/");
-			mysqli_query("UPDATE user SET confirmCode='0', activation='yes' WHERE email='$user_login'");
+			mysqli_query($conn,"UPDATE user SET confirmCode='0', activation='yes' WHERE email='$user_login'");
 			if (isset($_REQUEST['ono'])) {
 				$ono = mysqli_real_escape_string($_REQUEST['ono']);
 				header("location: orderform.php?poid=".$ono."");
@@ -100,7 +100,7 @@ if(isset($_POST['activate'])){
 		<title>Welcome to ebuybd online shop</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
-	<body class="home-welcome-text" style="background-image: url(image/homebackgrndimg1.png);">
+	<body class="home-welcome-text" style="background-image: url(image/loginbackground.jpg); height: 380px; background-size: cover;">
 		<div class="homepageheader">
 			<div class="signinButton loginButton">
 				<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
@@ -112,7 +112,7 @@ if(isset($_POST['activate'])){
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -128,7 +128,7 @@ if(isset($_POST['activate'])){
 			<div class="container">
 				<div>
 					<div>
-						<div class="signupform_content">
+						<div class="signupform_content" >
 							<?php
 							 	if (isset($activacc)){
 							 		echo '<h2>Activation Form</h2>';
@@ -139,7 +139,7 @@ if(isset($_POST['activate'])){
 							<div class="signupform_text"></div>
 							<div>
 								<form action="" method="POST" class="registration">
-									<div class="signup_form">
+									<div class="signup_form" style="  height: 22em;">
 										<?php
 											if (isset($activacc)) {
 

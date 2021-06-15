@@ -50,7 +50,7 @@ $search_value = "";
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="../image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="../image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -66,7 +66,7 @@ $search_value = "";
 			<table>
 				<tr>
 					<th>
-						<a href="index.php" style="text-decoration: none;color: #fff;padding: 4px 12px;background-color: #24bfae;border-radius: 12px;">Home</a>
+						<a href="index.php" style="text-decoration: none;color: #fff;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">Home</a>
 					</th>
 					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Add Product</a></th>
 					<th><a href="newadmin.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">New Admin</a></th>
@@ -77,8 +77,8 @@ $search_value = "";
 		</div>
 		<div class="home-welcome">
 			<div class="home-welcome-text">
-				<h1>Welcome To Admin Panel</h1>
-				<h2>You have all permition to do!</h2>
+				<h1>Welcome</h1>
+				<h2>You're logged in! </h2>
 			</div>
 		</div>
 	</body>

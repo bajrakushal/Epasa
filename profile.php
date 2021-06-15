@@ -19,7 +19,7 @@ else {
 
 if (isset($_REQUEST['uid'])) {
 	
-	$user2 = mysql_real_escape_string($conn,$_REQUEST['uid']);
+	$user2 = mysqli_real_escape_string($conn,$_REQUEST['uid']);
 	if($user != $user2){
 		header('location: index.php');
 	}
@@ -37,7 +37,7 @@ $search_value = "";
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body style="background-image: url(image/homebackgrndimg1.png);">
+<body style="background-image: url(image/profile.png);">
 	<div class="homepageheader">
 			<div class="signinButton loginButton">
 				<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
@@ -64,7 +64,7 @@ $search_value = "";
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 				</a>
 			</div>
 			<div id="srcheader">
@@ -77,20 +77,7 @@ $search_value = "";
 			</div>
 		</div>
 	<div class="categolis">
-		<table>
-			<tr>
-				<th>
-					<a href="women/saree.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Saree</a>
-				</th>
-				<th><a href="women/ornament.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Ornament</a></th>
-				<th><a href="women/watch.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Watch</a></th>
-				<th><a href="women/perfume.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Perfume</a></th>
-				<th><a href="women/hijab.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Hijab</a></th>
-				<th><a href="women/tshirt.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">T-Shirt</a></th>
-				<th><a href="women/footwear.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">FootWear</a></th>
-				<th><a href="women/toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Toilatry</a></th>
-			</tr>
-		</table>
+		
 	</div>
 	<div style="margin-top: 20px;">
 		<div style="width: 900px; margin: 0 auto;">
@@ -123,8 +110,8 @@ $search_value = "";
 								<tr>
 									<?php include ( "inc/connect.inc.php");
 									$query = "SELECT * FROM orders WHERE uid='$user' ORDER BY id DESC";
-									$run = mysql_query($query);
-									while ($row=mysql_fetch_assoc($run)) {
+									$run = mysqli_query($conn,$query);
+									while ($row=mysqli_fetch_assoc($run)) {
 										$pid = $row['pid'];
 										$quantity = $row['quantity'];
 										$oplace = $row['oplace'];
@@ -135,8 +122,8 @@ $search_value = "";
 										
 										//get product info
 										$query1 = "SELECT * FROM products WHERE id='$pid'";
-										$run1 = mysql_query($query1);
-										$row1=mysql_fetch_assoc($run1);
+										$run1 = mysqli_query($conn,$query1);
+										$row1=mysqli_fetch_assoc($run1);
 										$pId = $row1['id'];
 										$pName = substr($row1['pName'], 0,50);
 										$price = $row1['price'];

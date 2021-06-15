@@ -12,7 +12,7 @@ else {
 	
 		$eoid = mysqli_real_escape_string($conn, $_REQUEST['eoid']);
 		$getposts5 = mysqli_query($conn, "SELECT * FROM orders WHERE id='$eoid'") or die(mysql_error());
-			if (mysql_num_rows($getposts5)){
+			if (mysqli_num_rows($getposts5)){
 
 			}else {
 				header('location: index.php');
@@ -39,10 +39,12 @@ else {
 			$eddate = $get_order_info['ddate'];
 
 			$result2 = mysqli_query($conn,"SELECT * FROM user WHERE id='$eouid'");
-			$get_order_info2 = mysql_fetch_assoc($result2);
-			$euname = $get_order_info2['firstName'];
-			$euemail = $get_order_info2['email'];
-			$eumobile = $get_order_info2['mobile'];
+			if($get_order_info2 = mysqli_fetch_assoc($result2))
+			{
+				$euname = $get_order_info2['firstName'];
+				$euemail = $get_order_info2['email'];
+				$eumobile = $get_order_info2['mobile'];
+			}
 }
 
 $getposts = mysqli_query($conn, "SELECT * FROM products WHERE id ='$eopid'") or die(mysql_error());
@@ -71,7 +73,7 @@ $ddate = $_POST['ddate'];
 			throw new Exception('Status can not be empty');
 			
 		}
-				if(mysql_query("UPDATE orders SET dstatus='$eodstatus', ddate='$ddate', quantity='$dquantity' WHERE id='$eoid'")){
+				if(mysqli_query($conn,"UPDATE orders SET dstatus='$eodstatus', ddate='$ddate', quantity='$dquantity' WHERE id='$eoid'")){
 					//success message
 				header('location: editorder.php?eoid='.$eoid.'');
 				$success_message = '
@@ -86,7 +88,7 @@ $ddate = $_POST['ddate'];
 }
 if (isset($_POST['delorder'])) {
 //triming name
-	if(mysql_query("DELETE FROM orders WHERE id='$eoid'")){
+	if(mysqli_query($conn,"DELETE FROM orders WHERE id='$eoid'")){
 
 	header('location: orders.php');
 	}
@@ -128,7 +130,7 @@ $search_value = "";
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="../image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="../image/epasalogo.png">
 				</a>
 			</div>
 			<div id="srcheader">
@@ -149,14 +151,14 @@ $search_value = "";
 					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Add Product</a></th>
 					<th><a href="newadmin.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">New Admin</a></th>
 					<th><a href="allproducts.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">All Products</a></th>
-					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #24bfae;border-radius: 12px;">Orders</a></th>
+					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">Orders</a></th>
 				</tr>
 			</table>
 		</div>
 	<div class="holecontainer" style=" padding-top: 20px; padding: 0 20%">
 		<div class="container signupform_content ">
 			<div>
-				<h2 style="padding-bottom: 20px;">Change Delevary Status</h2>
+				<h2 style="padding-bottom: 20px;">Change Delivery Status</h2>
 				<div style="float: right;">
 				<?php 
 					echo '
@@ -173,9 +175,8 @@ $search_value = "";
 									<div>
 										<td>
 											<select name="dstatus" required="required" style=" font-size: 20px;
-												font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+												font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 														<option selected value="'.$eodstatus.'">'.$eodustatus.'</option>
-														<option value="No">No</option>
 														<option value="Yes">Yes</option>
 														<option value="Cancel">Cancel</option>
 													</select>
@@ -184,7 +185,7 @@ $search_value = "";
 									<div>
 										<td>
 											<select name="quantity" required="required" style=" font-size: 20px;
-										font-style: italic; margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+										font-style: italic; margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 										<option selected value="'.$eoquantity.'">Quantity: '.$eoquantity.'</option>';
 				 								?><?php
 												for ($i=1; $i<=$available; $i++) { 

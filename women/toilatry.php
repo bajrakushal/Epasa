@@ -34,7 +34,7 @@ else {
 				<th><a href="hijab.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Hijab</a></th>
 				<th><a href="tshirt.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">T-Shirt</a></th>
 				<th><a href="footwear.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">FootWear</a></th>
-				<th><a href="toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #24bfae;border-radius: 12px;">Toiletry</a></th>
+				<th><a href="toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">Toiletry</a></th>
 			</tr>
 		</table>
 	</div>

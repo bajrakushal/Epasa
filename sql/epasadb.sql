@@ -1,23 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2017 at 06:48 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: May 03, 2021 at 01:04 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ebuybd`
+-- Database: `epasadb`
 --
 
 -- --------------------------------------------------------
@@ -26,8 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
-`id` int(11) NOT NULL,
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
   `firstName` varchar(125) NOT NULL,
   `lastName` varchar(125) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -36,14 +37,15 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(100) NOT NULL,
   `type` varchar(20) NOT NULL,
   `confirmCode` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `firstName`, `lastName`, `email`, `mobile`, `address`, `password`, `type`, `confirmCode`) VALUES
-(3, 'Borsha', 'Tasnim', 'borsha@gmail.com', '01678293748', 'Dhaka, Bangladesh', 'aa030295ae26e8acbd3d1c9415a60f12', 'manager', '117631');
+(3, 'Borsha', 'Tasnim', 'borsha@gmail.com', '01678293748', 'Dhaka, Bangladesh', 'aa030295ae26e8acbd3d1c9415a60f12', 'manager', '117631'),
+(4, 'Ram', 'Sharma', 'ram@gmail.com', '123456779', 'htd', '25f9e794323b453885f5181f1b624d0b', 'CEO', '');
 
 -- --------------------------------------------------------
 
@@ -51,8 +53,8 @@ INSERT INTO `admin` (`id`, `firstName`, `lastName`, `email`, `mobile`, `address`
 -- Table structure for table `orders`
 --
 
-CREATE TABLE IF NOT EXISTS `orders` (
-`id` int(11) NOT NULL,
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -61,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `dstatus` varchar(10) NOT NULL DEFAULT 'no',
   `odate` date NOT NULL,
   `ddate` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
@@ -71,7 +73,6 @@ INSERT INTO `orders` (`id`, `uid`, `pid`, `quantity`, `oplace`, `mobile`, `dstat
 (1, 7, 28, 0, 'Manikganj Sadar', '01677531881', 'no', '2017-04-07', '0000-00-00'),
 (2, 7, 31, 0, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'yes', '2017-04-07', '0000-00-00'),
 (4, 7, 26, 0, 'South Seota, Manikganj Sadar', '01677531881', 'no', '2017-04-07', '0000-00-00'),
-(9, 7, 44, 1, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'no', '2017-04-08', '0000-00-00'),
 (10, 7, 44, 3, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'Yes', '2017-04-08', '0000-00-00'),
 (13, 7, 11, 2, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'Cancel', '2017-04-08', '0000-00-00'),
 (14, 7, 40, 1, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'no', '2017-04-08', '0000-00-00'),
@@ -89,7 +90,15 @@ INSERT INTO `orders` (`id`, `uid`, `pid`, `quantity`, `oplace`, `mobile`, `dstat
 (26, 11, 29, 2, 'Saver, Dhaka', '01678293748', 'Cancel', '2017-04-10', '0000-00-00'),
 (27, 7, 43, 1, 'Nikunja 2, Khilkhet, Dhaka', '01677531881', 'no', '2017-04-10', '0000-00-00'),
 (28, 11, 29, 1, 'Saver, Dhaka', '01678293748', 'no', '2017-04-10', '2017-04-11'),
-(29, 11, 43, 1, 'Saver, Dhaka', '01678293748', 'no', '2017-04-10', '2017-06-12');
+(29, 11, 43, 1, 'Saver, Dhaka', '01678293748', 'no', '2017-04-10', '2017-06-12'),
+(32, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(33, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(34, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(35, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(36, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(37, 13, 51, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(38, 13, 49, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10'),
+(39, 13, 49, 1, 'htd', '986010125', 'no', '2021-05-03', '2021-05-10');
 
 -- --------------------------------------------------------
 
@@ -97,8 +106,8 @@ INSERT INTO `orders` (`id`, `uid`, `pid`, `quantity`, `oplace`, `mobile`, `dstat
 -- Table structure for table `products`
 --
 
-CREATE TABLE IF NOT EXISTS `products` (
-`id` int(11) NOT NULL,
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
   `pName` varchar(100) NOT NULL,
   `price` int(11) NOT NULL,
   `description` text NOT NULL,
@@ -108,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `item` varchar(100) NOT NULL,
   `pCode` varchar(20) NOT NULL,
   `picture` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
@@ -145,7 +154,8 @@ INSERT INTO `products` (`id`, `pName`, `price`, `description`, `available`, `cat
 (49, 'Soap 1', 80, 'Nice', 20, 'women', 'no', 'toiletry', 'SP234', '1491499503.jpg'),
 (51, 'New Perfume 4', 4453, 'asdfa', 34, 'women', 'clothing', 'watch', 'asdf78', '1491707164.jpg'),
 (52, 'Sareesf', 453354, 'asdfa', 342, 'women', 'clothing', 'perfume', 'S56', '1491850298.jpg'),
-(53, 'Soap 3', 345, 'Cool', 30, 'women', 'clothing', 'toiletry', 'S789', '1491850339.jpg');
+(53, 'Soap 3', 155, 'Cool', 30, 'women', 'clothing', 'toiletry', 'S789', '1491850339.jpg'),
+(54, 'sun glass', 1500, 'Glasses for women', 10, 'women', 'clothing', 'ornament', '123', '1620029713.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,8 +163,8 @@ INSERT INTO `products` (`id`, `pName`, `price`, `description`, `available`, `cat
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
   `firstName` varchar(25) NOT NULL,
   `lastName` varchar(25) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -163,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(100) NOT NULL,
   `confirmCode` varchar(10) NOT NULL,
   `activation` varchar(10) NOT NULL DEFAULT 'no'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -172,7 +182,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `mobile`, `address`, `password`, `confirmCode`, `activation`) VALUES
 (9, 'Borsha', 'Tanjina', 'Tanjina@gmail.com', '01578399283', 'Dhaka, Bangladesh', 'aa030295ae26e8acbd3d1c9415a60f12', '217576', 'yes'),
 (10, 'Trisha', 'Rehman', 'trisha@gmail.com', '01923457834', 'Mirpur 2, Dhaka', '5af7a513a7c48f6cc97253254b29509b', '0', 'yes'),
-(11, 'Akhi', 'Alam', 'akhi@gmail.com', '01678293748', 'Saver, Dhaka', 'ca52febd8be7c4480ae90cdae8438a03', '0', 'yes');
+(11, 'Akhi', 'Alam', 'akhi@gmail.com', '01678293748', 'Saver, Dhaka', 'ca52febd8be7c4480ae90cdae8438a03', '0', 'yes'),
+(12, 'Kushal', 'Bajracharya', 'k@gmail.com', '9860102155', 'hetauda', '25f9e794323b453885f5181f1b624d0b', '360020', 'no'),
+(13, 'Ram', 'Sharam', 'ram@gmail.com', '986010125', 'htd', '25f9e794323b453885f5181f1b624d0b', '0', 'yes');
 
 --
 -- Indexes for dumped tables
@@ -182,25 +194,25 @@ INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `mobile`, `address`,
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -210,22 +222,27 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

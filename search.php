@@ -63,7 +63,7 @@ $search_value = trim($_GET['keywords']);
 		</div>
 		<div style="float: left; margin: 5px 0px 0px 23px;">
 			<a href="index.php">
-				<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+				<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 			</a>
 		</div>
 		<div id="srcheader">
@@ -74,22 +74,6 @@ $search_value = trim($_GET['keywords']);
 				</form>
 			<div class="srcclear"></div>
 		</div>
-	</div>
-	<div class="categolis">
-		<table>
-			<tr>
-				<th>
-					<a href="women/saree.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Saree</a>
-				</th>
-				<th><a href="women/ornament.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Ornament</a></th>
-				<th><a href="women/watch.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Watch</a></th>
-				<th><a href="women/perfume.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Perfume</a></th>
-				<th><a href="women/hijab.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Hijab</a></th>
-				<th><a href="women/tshirt.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">T-Shirt</a></th>
-				<th><a href="women/footwear.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">FootWear</a></th>
-				<th><a href="women/toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Toilatry</a></th>
-			</tr>
-		</table>
 	</div>
 	<div style="padding: 30px 120px; font-size: 25px; margin: 0 auto; display: table; width: 98%;">
 		<div>

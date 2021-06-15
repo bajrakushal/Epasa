@@ -56,7 +56,7 @@ if (((@$_FILES['profilepic']['type']=='image/jpeg') || (@$_FILES['profilepic']['
 	}else {
 		if(move_uploaded_file(@$_FILES["profilepic"]["tmp_name"], "../image/product/$item/".$filename)){
 			$photos = $filename;
-			$result = mysql_query("INSERT INTO products(pName,price,description,available,category,type,item,pCode,picture) VALUES ('$_POST[pname]','$_POST[price]','$_POST[descri]','$_POST[available]','$_POST[category]','$_POST[type]','$_POST[item]','$_POST[code]','$photos')");
+			$result = mysqli_query($conn,"INSERT INTO products(pName,price,description,available,category,type,item,pCode,picture) VALUES ('$_POST[pname]','$_POST[price]','$_POST[descri]','$_POST[available]','$_POST[category]','$_POST[type]','$_POST[item]','$_POST[code]','$photos')");
 				header("Location: allproducts.php");
 		}else {
 			echo "Something Worng on upload!!!";
@@ -105,7 +105,7 @@ $search_value = "";
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="../image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="../image/epasalogo.png">
 				</a>
 			</div>
 			<div id="srcheader">
@@ -123,7 +123,7 @@ $search_value = "";
 					<th>
 						<a href="index.php" style="text-decoration: none;color: #fff;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Home</a>
 					</th>
-					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #24bfae;border-radius: 12px;">Add Product</a></th>
+					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">Add Product</a></th>
 					<th><a href="newadmin.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">New Admin</a></th>
 					<th><a href="allproducts.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">All Products</a></th>
 					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Orders</a></th>
@@ -170,14 +170,14 @@ $search_value = "";
 													<div>
 														<td>
 															<select name="category" required="required" style=" font-size: 20px;
-														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 																<option selected value="women">Women</option>
 															</select>
 														</td>
 													</div>
 													<div>
 														<select name="type" required="required" style=" font-size: 20px;
-														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 																<option selected value="clothing">Clothing</option>
 																<option value="other">Other</option>
 															</select>
@@ -185,7 +185,7 @@ $search_value = "";
 													<div>
 														<td>
 															<select name="item" required="required" style=" font-size: 20px;
-														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #169E8F;margin-left: 0;width: 300px;background-color: transparent;" class="">
+														font-style: italic;margin-bottom: 3px;margin-top: 0px;padding: 14px;line-height: 25px;border-radius: 4px;border: 1px solid #169E8F;color: #000;margin-left: 0;width: 300px;background-color: transparent;" class="">
 																<option selected value="saree">Saree</option>
 																<option value="ornament">Ornaments</option>
 																<option value="watch">Watch</option>

@@ -99,7 +99,7 @@ $npass1 = $_POST['npass1'];
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body style="background-image: url(image/homebackgrndimg1.png);">
+<body style="background-image: url(image/profile.jpg);">
 	<div class="homepageheader">
 			<div class="signinButton loginButton">
 				<div class="uiloginbutton signinButton loginButton" style="margin-right: 40px;">
@@ -126,7 +126,7 @@ $npass1 = $_POST['npass1'];
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -139,20 +139,6 @@ $npass1 = $_POST['npass1'];
 			</div>
 		</div>
 	<div class="categolis">
-		<table>
-			<tr>
-				<th>
-					<a href="women/saree.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Saree</a>
-				</th>
-				<th><a href="women/ornament.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Ornament</a></th>
-				<th><a href="women/watch.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Watch</a></th>
-				<th><a href="women/perfume.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Perfume</a></th>
-				<th><a href="women/hijab.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Hijab</a></th>
-				<th><a href="women/tshirt.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">T-Shirt</a></th>
-				<th><a href="women/footwear.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">FootWear</a></th>
-				<th><a href="women/toilatry.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Toilatry</a></th>
-			</tr>
-		</table>
 	</div>
 	<div style="margin-top: 20px;">
 		<div style="width: 901px; margin: 0 auto;">
@@ -170,8 +156,8 @@ $npass1 = $_POST['npass1'];
 					<div class="holecontainer" style=" padding-top: 20px; padding: 0 20%">
 						<form action="" method="POST" class="registration">
 							<div class="container signupform_content ">
-								<div style="text-align: center;font-size: 20px;color: #fff;margin: 0 0 5px 0;">
-									<td >Change Password:</td>
+								<div style="font-size: 20px;color: #fff;margin: 0 0 5px 0;">
+									<td><h4 style="color: #000;">Change Password:</h4></td>
 								</div>
 								<div>
 									<td><input class="email signupbox" type="password" name="opass" placeholder="Old Password"></td>
@@ -182,8 +168,8 @@ $npass1 = $_POST['npass1'];
 								<div>
 									<td><input class="email signupbox" type="password" name="npass1" placeholder="Repeat Password"></td>
 								</div>
-								<div style="text-align: center;font-size: 20px;color: #fff;margin: 0 0 5px 0;">
-									<td >Change Email:</td>
+								<div style="font-size: 20px;color: #000;margin: 10px 0 5px 0;">
+									<td><h4 style="color: #000;">Change Email:</h4></td>
 								</div>
 								<div>
 									<td><?php echo '<input class="email signupbox" required type="email" name="email" placeholder="New Email" value="'.$uemail_db.'">'; ?></td>

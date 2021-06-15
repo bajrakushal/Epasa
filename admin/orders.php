@@ -46,7 +46,7 @@ else {
 			</div>
 			<div style="float: left; margin: 5px 0px 0px 23px;">
 				<a href="index.php">
-					<img style=" height: 75px; width: 130px;" src="../image/ebuybdlogo.png">
+					<img style=" height: 75px; width: 130px;" src="../image/epasalogo.png">
 				</a>
 			</div>
 			<div class="">
@@ -67,7 +67,7 @@ else {
 					<th><a href="addproduct.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">Add Product</a></th>
 					<th><a href="newadmin.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">New Admin</a></th>
 					<th><a href="allproducts.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #c7587e;border-radius: 12px;">All Products</a></th>
-					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #24bfae;border-radius: 12px;">Orders</a></th>
+					<th><a href="orders.php" style="text-decoration: none;color: #ddd;padding: 4px 12px;background-color: #ff7588;border-radius: 12px;">Orders</a></th>
 				</tr>
 			</table>
 		</div>
@@ -105,10 +105,12 @@ else {
 						//getting user info
 						$query1 = "SELECT * FROM user WHERE id='$ouid'";
 						$run1 = mysqli_query($conn, $query1);
-						$row1=mysqli_fetch_assoc($run1);
-						$ofname = $row1['firstName'];
-						$oumobile = $row1['mobile'];
-						$ouemail = $row1['email'];
+						if($row1= mysqli_fetch_assoc($run1))
+						{
+							$ofname = $row1['firstName'];
+							$oumobile = $row1['mobile'];
+							$ouemail = $row1['email'];
+						}
 
 						//product info
 						$query2 = "SELECT * FROM products WHERE id='$opid'";
